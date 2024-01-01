@@ -1,9 +1,4 @@
-/*! DataTables UIkit 3 integration
- */
 
-/**
- * This is a tech preview of UIKit integration with DataTables.
- */
 (function( factory ){
 	if ( typeof define === 'function' && define.amd ) {
 		// AMD

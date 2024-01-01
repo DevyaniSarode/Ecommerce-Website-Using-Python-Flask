@@ -5,16 +5,108 @@
     <div class="row">
         <div class="col-lg-3 my-4">
             <div class="list-group">
-                <a href="/tshirt" class="list-group-item">T-Shirt</a>
-                <a href="/wallet" class="list-group-item">Wallet</a>
-                <a href="/belt" class="list-group-item">Belt</a>
-                <a href="/shoes" class="list-group-item">Shoes</a>
+                <a href="/birthday" class="list-group-item">Birthday Flowers</a>
+                <a href="/anniversary" class="list-group-item">Anniversary Flowers</a>
+                <a href="/wedding" class="list-group-item">Wedding Flowers</a>
+                <a href="/loveandaffection" class="list-group-item">Love and Affection Flowers</a>
+                <a href="/congratulations" class="list-group-item">Congratulations Flowers</a>
             </div>
         </div>
         <!-- /.col-lg-3 -->
         <div class="col-lg-9">
             <div class="row">
-                {% for product in tshirts %}
+                {% for product in birthday %}
+                <div class="col-lg-6">
+                    <div class="card mt-4">
+                        <img class="card-img-top img-fluid"
+                             src="static/image/product/{{product.category}}/{{product.picture}}" alt="">
+                    </div>
+                </div>
+                <!-- /.card -->
+                <div class="col-lg-6">
+                    <div class="card card-outline-secondary my-4">
+                        <div class="card-header">
+                            Order Details
+                        </div>
+                        <div class="card-body">
+                            {% from "includes/_formhelpers.html" import render_field %}
+                            <form method="POST" action="/{{product.category}}?order={{product.id}}">
+                                <div class="form-group">
+                                    {{render_field(form.name, class_="form-control")}}
+                                </div>
+                                <div class="form-group">
+                                    {{render_field(form.mobile_num, class_="form-control")}}
+                                </div>
+
+                                <div class="form-group">
+                                    {{render_field(form.quantity, class_="form-control")}}
+                                </div>
+
+                                <div class="form-group">
+                                    {{render_field(form.order_place, class_="form-control")}}
+                                </div>
+
+                                
+                                <button type="submit" class="btn btn-primary">Confirm Order</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- /.card -->
+
+            </div>
+            
+            
+        <!-- /.col-lg-3 -->
+        <div class="col-lg-20">
+            <div class="row">
+                {% for product in anniversary %}
+                <div class="col-lg-6">
+                    <div class="card mt-4">
+                        <img class="card-img-top img-fluid"
+                             src="static/image/product/{{product.category}}/{{product.picture}}" alt="">
+                    </div>
+                </div>
+
+                <!-- /.card -->
+                <div class="col-lg-6">
+                    <div class="card card-outline-secondary my-4">
+                        <div class="card-header">
+                            Order Details
+                        </div>
+                        <div class="card-body">
+                            {% from "includes/_formhelpers.html" import render_field %}
+                            <form method="POST" action="/{{product.category}}?order={{product.id}}">
+                                <div class="form-group">
+                                    {{render_field(form.name, class_="form-control")}}
+                                </div>
+                                <div class="form-group">
+                                    {{render_field(form.mobile_num, class_="form-control")}}
+                                </div>
+
+                                <div class="form-group">
+                                    {{render_field(form.quantity, class_="form-control")}}
+                                </div>
+
+                                <div class="form-group">
+                                    {{render_field(form.order_place, class_="form-control")}}
+                                </div>
+                                <button type="submit" class="btn btn-primary">Confirm Order</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- /.card -->
+
+            </div>    
+            
+            
+        <!-- /.col-lg-3 -->
+        <div class="col-lg-20">
+            <div class="row">
+                {% for product in wedding %}
                 <div class="col-lg-6">
                     <div class="card mt-4">
                         <img class="card-img-top img-fluid"
@@ -52,8 +144,181 @@
                 {% endfor %}
                 <!-- /.card -->
 
-            </div>
-             <!--  
+            </div>    
+            
+            
+        <!-- /.col-lg-3 -->
+        <div class="col-lg-25">
+            <div class="row">
+                {% for product in loveandaffection %}
+                <div class="col-lg-6">
+                    <div class="card mt-4">
+                        <img class="card-img-top img-fluid"
+                             src="static/image/product/{{product.category}}/{{product.picture}}" alt="">
+                    </div>
+                </div>
+                <!-- /.card -->
+                <div class="col-lg-6">
+                    <div class="card card-outline-secondary my-4">
+                        <div class="card-header">
+                            Order Details
+                        </div>
+                        <div class="card-body">
+                            {% from "includes/_formhelpers.html" import render_field %}
+                            <form method="POST" action="/{{product.category}}?order={{product.id}}">
+                                <div class="form-group">
+                                    {{render_field(form.name, class_="form-control")}}
+                                </div>
+                                <div class="form-group">
+                                    {{render_field(form.mobile_num, class_="form-control")}}
+                                </div>
+
+                                <div class="form-group">
+                                    {{render_field(form.quantity, class_="form-control")}}
+                                </div>
+
+                                <div class="form-group">
+                                    {{render_field(form.order_place, class_="form-control")}}
+                                </div>
+                                <button type="submit" class="btn btn-primary">Confirm Order</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- /.card -->
+
+            </div>    
+            
+        <!-- /.col-lg-3 -->
+        <div class="col-lg-25">
+            <div class="row">
+                {% for product in congratulations %}
+                <div class="col-lg-6">
+                    <div class="card mt-4">
+                        <img class="card-img-top img-fluid"
+                             src="static/image/product/{{product.category}}/{{product.picture}}" alt="">
+                    </div>
+                </div>
+                <!-- /.card -->
+                <div class="col-lg-6">
+                    <div class="card card-outline-secondary my-4">
+                        <div class="card-header">
+                            Order Details
+                        </div>
+                        <div class="card-body">
+                            {% from "includes/_formhelpers.html" import render_field %}
+                            <form method="POST" action="/{{product.category}}?order={{product.id}}">
+                                <div class="form-group">
+                                    {{render_field(form.name, class_="form-control")}}
+                                </div>
+                                <div class="form-group">
+                                    {{render_field(form.mobile_num, class_="form-control")}}
+                                </div>
+
+                                <div class="form-group">
+                                    {{render_field(form.quantity, class_="form-control")}}
+                                </div>
+
+                                <div class="form-group">
+                                    {{render_field(form.order_place, class_="form-control")}}
+                                </div>
+                                <button type="submit" class="btn btn-primary">Confirm Order</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- /.card -->
+
+            </div>    
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            <!--  
             {% if x == '' %}
             <h2 class="mb-4">No recommendation found</h2>
             {% else%}

@@ -5,16 +5,18 @@
     <div class="row">
         <div class="col-lg-3 my-4">
             <div class="list-group">
-                <a href="/tshirt" class="list-group-item">T-Shirt</a>
-                <a href="/wallet" class="list-group-item">Wallet</a>
-                <a href="/belt" class="list-group-item">Belt</a>
-                <a href="/shoes" class="list-group-item">Shoes</a>
+                <a href="/birthday" class="list-group-item">Birthday</a>
+                <a href="/anniversary" class="list-group-item">Anniversary</a>
+                <a href="/wedding" class="list-group-item">Wedding</a>
+                <a href="/loveandaffection" class="list-group-item">Love and Affection</a>
+                <a href="/congratulations" class="list-group-item">Congratulations</a>
+
             </div>
         </div>
         <!-- /.col-lg-3 -->
         <div class="col-lg-9">
             <div class="row">
-                {% for product in tshirts %}
+                {% for product in birthday %}
                 <div class="col-lg-6">
                     <div class="card mt-4">
                         <img class="card-img-top img-fluid"
@@ -29,7 +31,7 @@
                         </div>
                         <div class="card-body">
                             <h3 class="card-title">{{ product.pName}}</h3>
-                            <h4>${{ product.price}}</h4>
+                            <h4>Rs {{ product.price}}</h4>
                             <p class="card-text">{{ product.description}}</p>
                             <a href="/{{product.category}}?order={{product.id}}" class="btn btn-success">Order Now</a>
                         </div>
@@ -39,7 +41,131 @@
                 <!-- /.card -->
 
             </div>
-            {% if x == '' %}
+
+
+        <!-- /.col-lg-3 -->
+        <div class="col-lg-9">
+            <div class="row">
+                {% for product in anniversary %}
+                <div class="col-lg-6">
+                    <div class="card mt-4">
+                        <img class="card-img-top img-fluid"
+                             src="static/image/product/{{product.category}}/{{product.picture}}" alt="">
+                    </div>
+                </div>
+                <!-- /.card -->
+                <div class="col-lg-6">
+                    <div class="card card-outline-secondary my-4">
+                        <div class="card-header">
+                            Product Details
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">{{ product.pName}}</h3>
+                            <h4>Rs {{ product.price}}</h4>
+                            <p class="card-text">{{ product.description}}</p>
+                            <a href="/{{product.category}}?order={{product.id}}" class="btn btn-success">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- /.card -->
+
+            </div>
+       
+        <!-- /.col-lg-3 -->
+        <div class="col-lg-20">
+            <div class="row">
+                {% for product in wedding %}
+                <div class="col-lg-6">
+                    <div class="card mt-4">
+                        <img class="card-img-top img-fluid"
+                             src="static/image/product/{{product.category}}/{{product.picture}}" alt="">
+                    </div>
+                </div>
+                <!-- /.card -->
+                <div class="col-lg-6">
+                    <div class="card card-outline-secondary my-4">
+                        <div class="card-header">
+                            Product Details
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">{{ product.pName}}</h3>
+                            <h4>Rs {{ product.price}}</h4>
+                            <p class="card-text">{{ product.description}}</p>
+                            <a href="/{{product.category}}?order={{product.id}}" class="btn btn-success">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- /.card -->
+
+            </div>
+       
+        <!-- /.col-lg-3 -->
+        <div class="col-lg-25">
+            <div class="row">
+                {% for product in loveandaffection %}
+                <div class="col-lg-6">
+                    <div class="card mt-4">
+                        <img class="card-img-top img-fluid"
+                             src="static/image/product/{{product.category}}/{{product.picture}}" alt="">
+                    </div>
+                </div>
+                <!-- /.card -->
+                <div class="col-lg-6">
+                    <div class="card card-outline-secondary my-4">
+                        <div class="card-header">
+                            Product Details
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">{{ product.pName}}</h3>
+                            <h4>Rs {{ product.price}}</h4>
+                            <p class="card-text">{{ product.description}}</p>
+                            <a href="/{{product.category}}?order={{product.id}}" class="btn btn-success">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- /.card -->
+
+            </div>
+       
+        <!-- /.col-lg-3 -->
+        <div class="col-lg-25">
+            <div class="row">
+                {% for product in congratulations %}
+                <div class="col-lg-6">
+                    <div class="card mt-4">
+                        <img class="card-img-top img-fluid"
+                             src="static/image/product/{{product.category}}/{{product.picture}}" alt="">
+                    </div>
+                </div>
+                <!-- /.card -->
+                <div class="col-lg-6">
+                    <div class="card card-outline-secondary my-4">
+                        <div class="card-header">
+                            Product Details
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">{{ product.pName}}</h3>
+                            <h4>Rs {{ product.price}}</h4>
+                            <p class="card-text">{{ product.description}}</p>
+                            <a href="/{{product.category}}?order={{product.id}}" class="btn btn-success">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- /.card -->
+
+            </div>
+       
+
+
+            
+            
+            
+            
+        {% if x == '' %}
             <h2 class="mb-4">No similar product found</h2>
             {% else%}
             <h2 class="mb-4">Similar product for you:</h2>
@@ -53,7 +179,7 @@
                         </a>
                         <div class="card-body">
                             <h5><a class="card-title" href="/{{product.category}}?view={{product.id}}">{{ product.pName}}</a></h5>
-                            <h4>৳{{product.price}}</h4>
+                            <h4>Rs {{product.price}}</h4>
                         </div>
                     </div>
                     <!-- /.card -->

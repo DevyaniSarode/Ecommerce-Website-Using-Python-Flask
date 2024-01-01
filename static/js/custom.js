@@ -1,4 +1,3 @@
-
 function submit_message(message) {
         $.post( "/send_message", {message: message}, handle_response);
 
